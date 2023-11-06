@@ -1,6 +1,7 @@
 package com.a1dnan.billingservice.entities;
 
 import com.a1dnan.billingservice.model.Customer;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
