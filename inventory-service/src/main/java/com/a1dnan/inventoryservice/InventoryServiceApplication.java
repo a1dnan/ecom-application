@@ -18,9 +18,10 @@ public class InventoryServiceApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(ProductRepository productRepository){
+    public CommandLineRunner commandLineRunner(ProductRepository productRepository, RepositoryRestConfiguration restConfiguration){
 
         return args -> {
+            restConfiguration.exposeIdsFor(Product.class);
             productRepository.saveAll(
                     List.of(
                             Product.builder()
