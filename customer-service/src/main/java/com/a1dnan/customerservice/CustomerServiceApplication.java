@@ -19,9 +19,10 @@ public class CustomerServiceApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(CustomerRepository customerRepository){
+    public CommandLineRunner commandLineRunner(CustomerRepository customerRepository, RepositoryRestConfiguration restConfiguration){
 
         return args -> {
+            restConfiguration.exposeIdsFor(Customer.class);
             customerRepository.saveAll(
                     List.of(
                             Customer.builder()
